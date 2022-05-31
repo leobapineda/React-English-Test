@@ -15,7 +15,7 @@ export default function App({ darkMode }) {
       console.log(box); 
       return(
         [...box]
-      )
+      ) 
     })
   }
 
