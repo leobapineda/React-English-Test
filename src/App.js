@@ -6,6 +6,9 @@ import Box from "./components/Box";
 export default function App(props) {
   const [squares, setSquares] = useState(boxesData);
 
+  function toggle() {
+    console.log('click');
+  }
   
 
   const squareElements = squares.map((square) => {
@@ -15,7 +18,7 @@ export default function App(props) {
       <Box 
       key={square.id}
       on = {square.on}  
-      // changeColor = {color}
+      handleClick = {toggle}
       />
     );
   });

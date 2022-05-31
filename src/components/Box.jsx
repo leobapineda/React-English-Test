@@ -1,19 +1,16 @@
 import React, { useState } from "react";
 import "../style/Box.css";
 
-export default function Box({id, on, changeColor}) {
+export default function Box({id, on, handleClick}) {
   
-  const [onVariable, setonVariable] = useState(on)
 
-  function toggleOn() {
-    setonVariable((onVariable) => !onVariable)
-  }
+  
 
   const styles = {
-    backgroundColor: onVariable ? '#333' : '#ddd'
+    backgroundColor: on ? '#333' : 'transparent'
   }
  
   return(
-      <div onClick={toggleOn} style={styles} className="box"></div>
+      <div onClick={handleClick} style={styles} className="box"></div>
   )
 }
