@@ -8,12 +8,16 @@ export default function Form() {
   const [language, setLanguage] = useState('')
   const [terminos, setTerminos] = useState(false)
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('enviado! urray');
+  }
 
 
     return (
        <>
        <h2>Formulario</h2>
-       <form action="">
+       <form action="" onSubmit={handleSubmit} >
          <label htmlFor="name">Nombre:</label>
          <input 
          type="text" 
@@ -46,7 +50,6 @@ export default function Form() {
            setFlavor(e.target.value)
           }}/>
           <label htmlFor="React">Other</label>
-       </form>
        <br /><hr />
           <p>Elije programa fav</p>
           <select
@@ -66,6 +69,11 @@ export default function Form() {
           <input type="checkbox" name="terminos" id="terminos" onChange={(e) => {
             setTerminos(e.target.checked)
           }}/>
+          <br />
+          <br />
+          <input type="submit" value="Enviar" />
+       </form>
+
        </>
     )
 }
