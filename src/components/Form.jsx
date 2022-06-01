@@ -1,8 +1,16 @@
 import React, { useState } from "react"
 
 export default function Form() {
-  const [fullName, setFullName] = useState({firstName:'', lastName:'', email:'', comments: '', checkBox: true})
-
+  const [fullName, setFullName] = useState({
+    firstName:'', 
+    lastName:'', 
+    email:'', 
+    comments: '', 
+    checkBox: true,
+    employed: ''
+  })
+  console.log(fullName.employed);
+  console.log(fullName.employed);
  function handleChange(e) {
   const {name, value, type, checked} = e.target
   // const {name, value} = e.target
@@ -55,6 +63,44 @@ export default function Form() {
             defaultChecked={fullName.checkBox}
              />
             <label htmlFor="isFriendly">Are you friendly?</label>
+            <fieldset>
+                <legend>Current employment status</legend>
+                
+                <input 
+                    type="radio"
+                    name="employed"
+                    value='unemployed'
+                    id="unemployed"
+                    onChange={handleChange}
+
+                />
+                <label htmlFor="unemployed">Unemployed</label>
+                <br />
+                
+                <input 
+                    type="radio"
+                    name="employed"
+                    value='part-time'
+                    id="part-time"
+                    onChange={handleChange}
+                />
+                <label htmlFor="part-time">Part-time</label>
+                <br />
+                
+                <input 
+                    type="radio"
+                    name="employed"
+                    value='full-time'
+                    id="full-time"
+                    onChange={handleChange}
+
+                />
+                <label htmlFor="full-time">Full-time</label>
+                <br />
+                
+            </fieldset>
+
+
         </form>
     )
 }
