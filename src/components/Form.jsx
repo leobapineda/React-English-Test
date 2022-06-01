@@ -6,6 +6,7 @@ export default function Form() {
   const [name, setName] = useState('')
   const [flavor, setFlavor] = useState('')
   const [language, setLanguage] = useState('')
+  const [terminos, setTerminos] = useState(false)
 
 
 
@@ -60,7 +61,11 @@ export default function Form() {
             <option value='php'>php</option>
             <option value='ruby' >ruby</option>
           </select>
-
+          <br /><hr />
+          <label htmlFor="terminos">Acepto todo sin leer</label>
+          <input type="checkbox" name="terminos" id="terminos" onChange={(e) => {
+            setTerminos(e.target.checked)
+          }}/>
        </>
     )
 }
