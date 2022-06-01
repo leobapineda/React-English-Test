@@ -9,18 +9,17 @@ export default function App(props) {
   function toggle(id) {
     setSquares((prevSquare) => {
       return prevSquare.map((square) => {
-        return square.id == id ? {...square, on : !square.on} : square
-      })
-    })
+        return square.id == id ? { ...square, on: !square.on } : square;
+      });
+    });
   }
 
   const squareElements = squares.map((square) => {
-
     return (
-      <Box 
-      key={square.id}
-      on = {square.on}  
-      handleClick = {() => toggle(square.id)}
+      <Box
+        key={square.id}
+        on={square.on}
+        handleClick={() => toggle(square.id)}
       />
     );
   });
