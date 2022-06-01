@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 
 export default function Form() {
-  const [fullName, setFullName] = useState({firstName:'', lastName:'', email:''})
-
+  const [fullName, setFullName] = useState({firstName:'', lastName:'', email:'', comments: ''})
+console.log(fullName);
  function handleChange(e) {
   setFullName( prevFullName => {
     return(
@@ -22,21 +22,27 @@ export default function Form() {
                 placeholder="First Name"
                 onChange={handleChange}
                 value={fullName.firstName}
-            />
+            /> <br />
             <input
                 type="text"
                 name="lastName"
                 placeholder="Last Name"
                 onChange={handleChange}
                 value={fullName.lastName}
-            />
+            /> <br />
             <input
                 type="email"
                 name="email"
                 placeholder="email@.com"
                 onChange={handleChange}
                 value={fullName.email}
-            />
+            /> <br />
+            <textarea 
+            placeholder="comments"
+            name="comments"
+            onChange={handleChange}
+            defaultValue={fullName.comments}
+            /> 
         </form>
     )
 }
