@@ -1,13 +1,26 @@
-import React from "react"
+import React, { useState } from "react"
 
 export default function Form() {
+  
+  const [name, setName] = useState('lol chan')
+
+
+
     return (
-        <form>
-          <div>Form</div>
-            <input
-                type="text"
-                placeholder="First Name"
-            />
-        </form>
+       <>
+       <h2>Formulario</h2>
+       <form action="">
+         <label htmlFor="name">Nombre:</label>
+         <input 
+         type="text" 
+         id="name" 
+         name="name" 
+         defaultValue={name} 
+         onChange={(e) => {
+           setName(e.target.value)
+         }}/>
+       </form>
+       <div>{name}</div>
+       </>
     )
 }
