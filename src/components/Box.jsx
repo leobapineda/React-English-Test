@@ -8,6 +8,6 @@ export default function Box({id, on, handleClick}) {
   }
  
   return(
-      <div onClick={() => {handleClick(id)}} style={styles} className="box"></div>
+      <div onClick={handleClick} style={styles} className="box"></div>
   )
 }

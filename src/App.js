@@ -20,8 +20,7 @@ export default function App(props) {
       <Box 
       key={square.id}
       on = {square.on}  
-      id = {square.id}  
-      handleClick = {toggle}
+      handleClick = {() => toggle(square.id)}
       />
     );
   });
