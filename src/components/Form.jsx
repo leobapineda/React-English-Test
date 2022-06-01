@@ -3,10 +3,21 @@ import React, { useState } from "react"
 
 export default function Form() {
   
-  const [name, setName] = useState('')
-  const [flavor, setFlavor] = useState('')
-  const [language, setLanguage] = useState('')
-  const [terminos, setTerminos] = useState(false)
+  const [form, setForm] = useState({})
+
+  const handleState = (e) => {
+    setForm({
+      ...form, 
+     [ e.target.name] : e.target.value
+    })
+  }
+
+  const handleCheck = (e) => {
+    setForm({
+      ...form, 
+     [ e.target.name] : e.target.checked
+    })
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -23,40 +34,29 @@ export default function Form() {
          type="text" 
          id="name" 
          name="name" 
-         defaultValue={name} 
-         onChange={(e) => {
-           setName(e.target.value)
-         }}/>
+         defaultValue={form.name} 
+         onChange={handleState}
+         />
          <br />
          <hr />
          <div>Favorite JS flavor</div>
-         <input type="radio" name="sabor" id="vanilla" value='vanilla' defaultChecked onChange={(e) => {
-           setFlavor(e.target.value) 
-          }}/>
+         <input type="radio" name="sabor" id="vanilla" value='vanilla' onChange={handleState}/>
           <label htmlFor="React">Vanilla</label>
          <br />
-         <input type="radio" name="sabor" id="react" value='react'  onChange={(e) => {
-           setFlavor(e.target.value)
-          }}/>
+         <input type="radio" name="sabor" id="react" value='react'  onChange={handleState}/>
           <label htmlFor="React">React</label>
          <br />
-         <input type="radio" name="sabor" id="vue" value='vue' onChange={(e) => {
-           setFlavor(e.target.value)
-          }}/>
+         <input type="radio" name="sabor" id="vue" value='vue' onChange={handleState}/>
           <label htmlFor="React">Vue</label>
          <br />
 
-         <input type="radio" name="sabor" id="other" value='other' onChange={(e) => {
-           setFlavor(e.target.value)
-          }}/>
+         <input type="radio" name="sabor" id="other" value='other' onChange={handleState}/>
           <label htmlFor="React">Other</label>
        <br /><hr />
           <p>Elije programa fav</p>
           <select
           name="language"
-          onChange={(e) => {
-            setLanguage(e.target.value)
-          }}
+          onChange={handleState}
           >
             <option value='---' >---</option>
             <option value='js' >js</option>
@@ -66,9 +66,7 @@ export default function Form() {
           </select>
           <br /><hr />
           <label htmlFor="terminos">Acepto todo sin leer</label>
-          <input type="checkbox" name="terminos" id="terminos" onChange={(e) => {
-            setTerminos(e.target.checked)
-          }}/>
+          <input type="checkbox" name="terminos" id="terminos" onChange={handleCheck}/>
           <br />
           <br />
           <input type="submit" value="Enviar" />
