@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 
 export default function Form() {
-  const [fullName, setFullName] = useState({firstName:'', lastName:'', email:'', comments: ''})
-console.log(fullName);
+  const [fullName, setFullName] = useState({firstName:'', lastName:'', email:'', comments: '', checkBox: true})
+
  function handleChange(e) {
   setFullName( prevFullName => {
     return(
@@ -42,7 +42,14 @@ console.log(fullName);
             name="comments"
             onChange={handleChange}
             defaultValue={fullName.comments}
-            /> 
+            /> <br />
+            <input 
+            type="checkbox" 
+            name="checkbox" 
+            id="checkbox"
+            checked={fullName.checkBox}
+             />
+            <label htmlFor="checkbox">Are you friendly?</label>
         </form>
     )
 }
