@@ -4,13 +4,15 @@ export default function Form() {
   const [fullName, setFullName] = useState({firstName:'', lastName:'', email:'', comments: '', checkBox: true})
 
  function handleChange(e) {
-  const {name, value} = e.target
+  const {name, value, type, checked} = e.target
+  // const {name, value} = e.target
 
   setFullName( prevFullName => {
     return(
      {
       ...prevFullName,
-      [name]: value,
+      [name]: type == 'checkbox' ? checked : value
+      // [name]:  value
      }
     ) 
   })
@@ -48,10 +50,11 @@ export default function Form() {
             <input 
             type="checkbox" 
             name="checkbox" 
-            id="checkbox"
-            checked={fullName.checkBox}
+            id="isFriendly"
+            onChange={handleChange}
+            defaultChecked={fullName.checkBox}
              />
-            <label htmlFor="checkbox">Are you friendly?</label>
+            <label htmlFor="isFriendly">Are you friendly?</label>
         </form>
     )
 }
