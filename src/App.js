@@ -1,29 +1,20 @@
-import { React, useState } from "react";
-import boxesData from "./components/Boxes";
-import "./App.css";
-import Box from "./components/Box";
+import React from "react"
+import Joke from "./components/Joke"
+import jokesData from "./components/jokesData"
 
-export default function App(props) {
-  const [squares, setSquares] = useState(boxesData);
-
-  function toggle(id) {
-    setSquares((prevSquare) => {
-      return prevSquare.map((square) => {
-        return square.id == id ? {...square, on : !square.on} : square
-      })
+export default function App() {
+    const jokeElements = jokesData.map(joke => {
+        return (
+            <Joke 
+                key={joke.id}
+                setup={joke.setup} 
+                punchline={joke.punchline} 
+            />
+        )
     })
-  }
-
-  const squareElements = squares.map((square) => {
-
     return (
-      <Box 
-      key={square.id}
-      on = {square.on}  
-      handleClick = {() => toggle(square.id)}
-      />
-    );
-  });
-
-  return <main>{squareElements}</main>;
+        <div>
+            {jokeElements}
+        </div>
+    )
 }
