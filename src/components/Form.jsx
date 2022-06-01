@@ -1,16 +1,20 @@
 import React, { useState } from "react"
 
 export default function Form() {
-  const [fullName, setFullName] = useState('')
+  const [fullName, setFullName] = useState({firstName:'', lastName:''})
   console.log(fullName);
 
  function handleChange(e) {
-  setFullName({
-    ...fullName, 
-    [e.target.name] : e.target.value 
+  setFullName( prevFullName => {
+    return(
+     {
+      ...prevFullName,
+      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
+     }
+    ) 
   })
   }
-
 
     return (
         <form>
