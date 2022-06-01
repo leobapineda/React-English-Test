@@ -4,11 +4,13 @@ export default function Form() {
   const [fullName, setFullName] = useState({firstName:'', lastName:'', email:'', comments: '', checkBox: true})
 
  function handleChange(e) {
+  const {name, value} = e.target
+
   setFullName( prevFullName => {
     return(
      {
       ...prevFullName,
-      [e.target.name]: e.target.value,
+      [name]: value,
      }
     ) 
   })
