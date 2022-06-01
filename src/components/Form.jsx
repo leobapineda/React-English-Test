@@ -13,7 +13,6 @@ export default function Form() {
     ) 
   })
   }
-
     return (
         <form>
           <div>Form</div>
@@ -22,18 +21,21 @@ export default function Form() {
                 name="firstName"
                 placeholder="First Name"
                 onChange={handleChange}
+                value={fullName.firstName}
             />
             <input
                 type="text"
                 name="lastName"
                 placeholder="Last Name"
                 onChange={handleChange}
+                value={fullName.lastName}
             />
             <input
                 type="email"
                 name="email"
                 placeholder="email@.com"
                 onChange={handleChange}
+                value={fullName.email}
             />
         </form>
     )
