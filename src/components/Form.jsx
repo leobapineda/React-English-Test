@@ -1,21 +1,30 @@
 import React, { useState } from "react"
 
 export default function Form() {
-
-  const [firstName, setFirstName] = useState('')
-
-  console.log(firstName);
+  const [fullName, setFullName] = useState('')
+  console.log(fullName);
 
  function handleChange(e) {
-   setFirstName(e.target.value)
+  setFullName({
+    ...fullName, 
+    [e.target.name] : e.target.value 
+  })
   }
+
 
     return (
         <form>
           <div>Form</div>
             <input
                 type="text"
+                name="firstName"
                 placeholder="First Name"
+                onChange={handleChange}
+            />
+            <input
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
                 onChange={handleChange}
             />
         </form>
