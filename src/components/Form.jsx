@@ -6,21 +6,20 @@ export default function Form() {
     lastName:'', 
     email:'', 
     comments: '', 
-    checkBox: true,
-    employed: ''
+    checkBox: false,
+    employed: '',
+    favColor: ''
   })
-  console.log(fullName.employed);
-  console.log(fullName.employed);
+  
  function handleChange(e) {
   const {name, value, type, checked} = e.target
-  // const {name, value} = e.target
 
   setFullName( prevFullName => {
     return(
      {
       ...prevFullName,
       [name]: type == 'checkbox' ? checked : value
-      // [name]:  value
+      
      }
     ) 
   })
@@ -72,6 +71,7 @@ export default function Form() {
                     value='unemployed'
                     id="unemployed"
                     onChange={handleChange}
+                    checked= {fullName.employed == 'unemployed'}
 
                 />
                 <label htmlFor="unemployed">Unemployed</label>
@@ -83,6 +83,7 @@ export default function Form() {
                     value='part-time'
                     id="part-time"
                     onChange={handleChange}
+                    checked= {fullName.employed == 'part-time'}
                 />
                 <label htmlFor="part-time">Part-time</label>
                 <br />
@@ -93,13 +94,30 @@ export default function Form() {
                     value='full-time'
                     id="full-time"
                     onChange={handleChange}
+                    checked= {fullName.employed == 'full-time'}
 
                 />
                 <label htmlFor="full-time">Full-time</label>
                 <br />
                 
             </fieldset>
-
+            <br />
+            <label htmlFor="favColor">What is your favorite color?</label>
+            <br />
+            <select 
+            value={fullName.favColor} 
+            onChange={handleChange}
+            name="favColor"
+            >
+                <option value="">--Chose--</option>
+                <option value="red">Red</option>
+                <option value="orange">Orange</option>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="indigo">Indigo</option>
+                <option value="violet">Violet</option>
+            </select>
 
         </form>
     )
