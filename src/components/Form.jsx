@@ -30,23 +30,22 @@ export default function Form() {
                   type="email" 
                   placeholder="Email address"
                   className="form--input"
-              />
+              /> <br />
               <input 
                   type="password" 
                   placeholder="Password"
                   className="form--input"
-              />
+              /> <br />
               <input 
                   type="password" 
                   placeholder="Confirm password"
                   className="form--input"
-              />
+              /> <br />
               
               <div className="form--marketing">
                   <input
                       id="okayToEmail"
                       type="checkbox"
-                      
                   />
                   <label htmlFor="okayToEmail">I want to join the newsletter</label>
               </div>
