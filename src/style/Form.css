@@ -25,7 +25,6 @@ body {
 }
 
 .form-container{
-    background-color: transparent;
     box-shadow: -3px 3px 5px 3px black;
     padding: 2em;
     border-radius: 1em;
@@ -41,6 +40,7 @@ input {
     outline: none;
     border: 1px solid #64ffda70;
     border-radius: 0.3em;
+    font-size: 0.8em;
 }
 
 input#okayToEmail {
@@ -60,6 +60,7 @@ div label {
     background-color: transparent;
     color: var(--color-green);
     cursor: pointer;
+    font-size: 0.8em;
 }
 
 .form--submit:hover, .form--submit:focus {

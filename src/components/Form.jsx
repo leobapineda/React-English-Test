@@ -63,6 +63,7 @@ export default function Form() {
                   className="form--input"
                   onChange={handleChange}
                   name='psw'
+                  autoComplete="on"
               /> <br />
               <input 
                   type="password" 
@@ -70,6 +71,7 @@ export default function Form() {
                   className="form--input"
                   onChange={handleChange}
                   name='pswConfirmation'
+                  autoComplete="on"
               /> <br />
               
               <div className="form--marketing">
