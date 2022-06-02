@@ -18,6 +18,19 @@ export default function Form() {
             )
         })
     }
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        if(formData.psw !== formData.pswConfirmation) {
+            console.log('psw dont match');
+        } else if(formData.psw === formData.pswConfirmation) {
+            console.log('Successfully signed up');
+            if(formData.checkBox) {
+                console.log('Thanks for signing up for our newsletter!');
+            }
+        }
+    }
+
     /**
      * Challenge: Connect the form to local state
      * 
@@ -36,7 +49,7 @@ export default function Form() {
   
   return (
       <div className="form-container">
-          <form className="form" >
+          <form className="form" onSubmit={handleSubmit} >
               <input 
                   type="email" 
                   placeholder="Email address"
