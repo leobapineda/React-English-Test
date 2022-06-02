@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import "./App.css";
-import Form from "./components/Form";
+import Form from "./components/API";
 
 export default function App(props) {
   return (
