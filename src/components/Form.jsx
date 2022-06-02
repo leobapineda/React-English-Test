@@ -23,9 +23,15 @@ export default function Form() {
      }
     ) 
   })
+
+}
+  function handleSubmit(event) {
+    event.preventDefault()
+    console.log(fullName);
   }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit} >
           <div>Form</div>
             <input
                 type="text"
@@ -118,7 +124,9 @@ export default function Form() {
                 <option value="indigo">Indigo</option>
                 <option value="violet">Violet</option>
             </select>
-
+            <br />
+            <br />
+          <button type="submit" >Submit</button>
         </form>
     )
 }
