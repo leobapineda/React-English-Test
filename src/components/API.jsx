@@ -1,20 +1,33 @@
 import { React, useState, useEffect } from "react";
-import "../style/API.css";
-export default function App() {
-  const [data, setData] = useState(window.innerWidth);
-  
-  function handleResize() {
-    setData(window.innerWidth);
-  }
 
+export default function App() {
+  const [starWardata, setStarWardata] = useState({});
+  console.log("api");
+
+  function apiRequest() {
+      console.log('API request');
+    fetch("https://swapi.dev/api/people/1")
+      .then((response) => response.json())
+      .then((data) => setStarWardata((starWardata) => (starWardata = data)
+      ));
+  }
   useEffect(() => {
-    //   only runs at page load because the [] never changes
-    window.addEventListener("resize", handleResize);
+    apiRequest()
   }, []);
 
-  return (
-    <div>
-      <h1>{data}</h1>
+  return ( 
+    <div> 
+      <pre>
+          
+          {JSON.stringify(starWardata, null, 2)}
+      
+      </pre>
     </div>
   );
+}
+
+
+
+for(let i=1; i<= 100; i++ ){
+
 }
