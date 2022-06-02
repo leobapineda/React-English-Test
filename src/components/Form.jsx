@@ -7,14 +7,13 @@ export default function Form() {
     const [formData, setFormData] = useState({email:'', psw:'', pswConfirmation:'', checkBox: false})
 
     function handleChange(e) {
-        console.log(e);
         const {name, value} = e.target
 
         setFormData((formData) => {
             return(
                 {
                     ...formData,
-                    [name]: value
+                    [name]: name=='checkBox' ? !formData.checkBox : value
                 }
             )
         })
@@ -34,8 +33,6 @@ export default function Form() {
      *    the "newsletter" checkbox, log "Thanks for signing
      *    up for our newsletter!" to the console.
      */
-    
-     
   
   return (
       <div className="form-container">
@@ -66,6 +63,8 @@ export default function Form() {
                   <input
                       id="okayToEmail"
                       type="checkbox"
+                      onChange={handleChange}
+                      name='checkBox'
                   />
                   <label htmlFor="okayToEmail">I want to join the newsletter</label>
               </div>
