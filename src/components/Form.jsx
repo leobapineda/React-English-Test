@@ -4,7 +4,7 @@ import '../style/Form.css'
 
 export default function Form() {
    
-    const [formData, setFormData] = useState({email:''})
+    const [formData, setFormData] = useState({email:'', psw:'', pswConfirmation:'', checkBox: false})
 
     function handleChange(e) {
         console.log(e);
@@ -51,11 +51,15 @@ export default function Form() {
                   type="password" 
                   placeholder="Password"
                   className="form--input"
+                  onChange={handleChange}
+                  name='psw'
               /> <br />
               <input 
                   type="password" 
                   placeholder="Confirm password"
                   className="form--input"
+                  onChange={handleChange}
+                  name='pswConfirmation'
               /> <br />
               
               <div className="form--marketing">
