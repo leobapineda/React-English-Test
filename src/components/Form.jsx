@@ -1,8 +1,24 @@
+import { getValue } from "@testing-library/user-event/dist/utils"
 import React, { useState } from "react"
 import '../style/Form.css'
 
 export default function Form() {
    
+    const [formData, setFormData] = useState({email:''})
+
+    function handleChange(e) {
+        console.log(e);
+        const {name, value} = e.target
+
+        setFormData((formData) => {
+            return(
+                {
+                    ...formData,
+                    [name]: value
+                }
+            )
+        })
+    }
     /**
      * Challenge: Connect the form to local state
      * 
@@ -19,17 +35,17 @@ export default function Form() {
      *    up for our newsletter!" to the console.
      */
     
-     function handleSubmit(event) {
-      event.preventDefault()
-  }
+     
   
   return (
       <div className="form-container">
-          <form className="form" onSubmit={handleSubmit}>
+          <form className="form" >
               <input 
                   type="email" 
                   placeholder="Email address"
                   className="form--input"
+                  onChange={handleChange}
+                  name='email'
               /> <br />
               <input 
                   type="password" 
