@@ -1,9 +1,9 @@
 import { React, useState } from "react";
 import "./App.css";
-import Form from "./components/API";
+import WindowTracker2 from "./components/WindowTracker2";
 
 export default function App(props) {
   return (
-      <Form />
+      <WindowTracker2 />
   )
 }
