@@ -1,6 +1,6 @@
 import {React, useEffect, useState} from "react";
 
-export default function Recipe() {
+export default function Recipe({title}) {
 
     // const APP_ID = '12762b41';
     // const APP_KEY = '17db636176a11fa3bf37ae9d8d2ef120'
@@ -13,7 +13,7 @@ export default function Recipe() {
 
     return(
         <div>
-            lol
+            <div>{title}</div>
         </div>
     )
 }
