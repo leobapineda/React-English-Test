@@ -3,11 +3,9 @@ import axios from "axios";
 import Recipe from "./components/Recipe";
 export default function App() {
 
-  // const YOUR_APP_ID = "1225815e";
-  // const YOUR_APP_KEY = "e642963f4d2299d6ac085245011970ab";
+  const YOUR_APP_ID = "1225815e";
+  const YOUR_APP_KEY = "e642963f4d2299d6ac085245011970ab";
 
-   const YOUR_APP_ID = "a52b4d43";
-  const YOUR_APP_KEY = "e0e5c667605f5e91d8275c973531b80a";
 
 
 
@@ -27,20 +25,23 @@ export default function App() {
   .then(APIdata => {
     setRecipeName(APIdata.data.hits)
   })
+  
  }, [submit])
 
  let map = recipeName.map(item => {
-
+ console.log(`i am the map ${recipeName}`);
+  
    let recipeItem = item.recipe.ingredients.map(element => {
       
       return(
-        <li key={element.text} >{element.text}</li>
+        // <li key={element.text} >{element.text}</li>
+        <li >{element.text}</li>
       )
     })
     
 
    return(
-      <div key={item.recipe.calories} >
+      <div key={item.recipe.image} >
         <div>{item.recipe.label}</div>
         <img src={item.recipe.image}/>
         <ul>
@@ -57,6 +58,7 @@ export default function App() {
   function hanbleSubmit(e) {
     e.preventDefault()
     setSubmit(food)
+    console.log('submit');
   }
 
   return (
@@ -73,9 +75,6 @@ export default function App() {
       />
 <button>Search</button>
     </form>
-
-    <button>Pizza</button>
-    <button>Pizza</button>
     <div>
         {map}
     </div>
