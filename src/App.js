@@ -1,16 +1,15 @@
 import { React, useEffect, useState } from "react";
 import axios from "axios";
 import Recipe from "./components/Recipe";
+import './App.css'
+
 export default function App() {
 
   const YOUR_APP_ID = "1225815e";
   const YOUR_APP_KEY = "e642963f4d2299d6ac085245011970ab";
 
-
-
-
   // the initial value of photos has to be something, otherwise the first render will throw and error because it is trying to use map on an undefined element
-  const [recipeName, setRecipeName] = useState([]);
+  const [recipeName, setRecipeName] = useState(null);
   const [food, setFood] = useState('')
   const [submit, setSubmit] = useState('')
   const [generateKey, setGenerateKey] = useState(1)
@@ -24,15 +23,14 @@ export default function App() {
   // .then(res => res.json())
   .then(APIdata => {
     setRecipeName(APIdata.data.hits)
+    console.log(APIdata.data)
   })
   
  }, [submit])
 
- let map = recipeName.map(item => {
- console.log(`i am the map ${recipeName}`);
-  
+ let map = recipeName?.map(item => {
    let recipeItem = item.recipe.ingredients.map(element => {
-      
+     
       return(
         // <li key={element.text} >{element.text}</li>
         <li >{element.text}</li>

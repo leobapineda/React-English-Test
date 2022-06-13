@@ -15,6 +15,6 @@ export default function Recipe({title}) {
         <div>
             <div>{title}</div>
         </div>
-    )
+    )   
 }
 
