@@ -1,3 +1,5 @@
+
+
 * {
   box-sizing: border-box;
   margin: 0.1em;
@@ -5,4 +7,10 @@
 
 body{
   margin: 1rem;
+}
+
+.btn {
+  background-color: #64ffda;
+  border: 1px solid black;
+  
 }
