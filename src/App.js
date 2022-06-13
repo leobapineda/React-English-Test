@@ -1,15 +1,18 @@
 import React from "react";
 import './App.css'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Products from "./Pages/Products";
 
 export default function App() {
   return(
     <>
     <BrowserRouter>
       <Routes>
-        <Route path="/"  element={<h1>home page</h1>}/>
-        <Route path="about"  element={<h1>about page</h1>}/>
-        <Route path="testing"  element={<h1>testing page</h1>}/>
+        <Route path="/"  element={<Home />}/>
+        <Route path="about"  element={<About />}/>
+        <Route path="products"  element={<Products />}/>
       </Routes>
     </BrowserRouter>
     </>
