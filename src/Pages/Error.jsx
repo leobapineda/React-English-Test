@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Products() {
+function Error() {
   return (
     <div>
-      <h1>products page</h1>
+      <h1>error page</h1>
       <Link className='btn' to='/' >go home</Link>
     </div>
   )
 }
 
-export default Products
+export default Error
