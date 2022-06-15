@@ -5,7 +5,7 @@ function Error() {
   return (
     <div>
       <h1>404</h1>
-      <p>error page</p>
+      <p>page not found</p>
       <Link className='btn' to='/' >go home</Link>
     </div>
   )

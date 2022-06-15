@@ -5,7 +5,7 @@ function About() {
   return (
     <div>
       <h1>about page</h1>
-      <Link className='btn' to='/' >go home</Link>
+      <Link className='btn' to='/' >to home</Link>
     </div>
   )
 }

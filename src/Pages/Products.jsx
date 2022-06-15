@@ -5,7 +5,7 @@ function Products() {
   return (
     <div>
       <h1>products page</h1>
-      <Link className='btn' to='/' >go home</Link>
+      <Link className='btn' to='/' >to home</Link>
     </div>
   )
 }
