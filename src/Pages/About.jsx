@@ -1,6 +1,8 @@
 import React from "react";
 
 function About() {
+  console.log('i am About page');
+  
   return (
     <div>
       <h1>about page</h1>
