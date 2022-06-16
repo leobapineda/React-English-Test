@@ -5,6 +5,8 @@ import About from "./Pages/About";
 import Products from "./Pages/Products";
 import Error from "./Pages/Error";
 import SharedLayout from "./Pages/SharedLayout";
+import SingleProduct from "./Pages/SingleProduct";
+import "./App.css"
 
 export default function App() {
   return (
@@ -15,6 +17,7 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/products/:productId" element={<SingleProduct />} />
             <Route path="*" element={<Error />} />
           </Route>
         </Routes>
