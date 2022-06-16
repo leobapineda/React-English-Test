@@ -1,13 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
 import About from "./About";
 
 function Home() {
   return (
     <div>
-      <h1>home page</h1>
-      <Link className="btn" to="about">to about</Link>
-      <Link className="btn" to="products">to producst</Link>
+      {/* this is the shared layout */}
+      <Navbar />
+      {/* this is the shared layout */}
+      {/* this is the content of the other pages */}
+      <Outlet />
+      {/* this is the content of the other pages */}
     </div>
   );
 }
