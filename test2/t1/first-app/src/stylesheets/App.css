@@ -19,6 +19,18 @@ body {
   padding-top: 1rem;
 }
 
+.sinopsis {
+  /* display: none; */
+}
+
+.sinopsis.show {
+  display: block;
+  position: absolute;
+  top: 50%;
+  background-color: red;
+  width: 50%;
+}
+
 .book-container .book-image {
   width: 70%;
   border-radius: 1rem;
