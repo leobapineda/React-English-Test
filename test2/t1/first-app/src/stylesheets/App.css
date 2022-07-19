@@ -1,7 +1,16 @@
+body {
+  position: relative;
+}
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+}
+
 .book-container {
   display: inline-block;
   border: 1px solid #d2d2d2;
   padding: 1rem;
+  position: relative;
 }
 .image-container {
   display: flex;
@@ -24,4 +33,21 @@
 .book-title::first-letter,
 .book-author::first-letter {
   text-transform: uppercase;
+}
+
+.add-book_msg {
+  display: none;
+}
+
+.add-book_msg.added {
+  width: 300px;
+  position: fixed;
+  top: calc(50% - 50px);
+  left: calc(50% - 150px);
+  color: red;
+  background-color: greenyellow;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
